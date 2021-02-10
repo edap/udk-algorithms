@@ -71,9 +71,9 @@ function draw() {
       grid[x][y] = 2;
     }
     else if (state == 2) {
-        turnLeft();
-        grid[x][y] = 0;
-      }
+      turnLeft();
+      grid[x][y] = 0;
+    }
 
     stroke(color(255));
     // what if you have more states, with more colors?
@@ -81,10 +81,10 @@ function draw() {
       stroke(color(0));
     }
     else if (grid[x][y] == 1) {
-        stroke(color(255));
+      stroke(color(255));
     }
     else if (grid[x][y] == 2) {
-        stroke(color(255,0,0));
+      stroke(color(255, 0, 0));
     }
     point(x, y);
     moveForward();
@@ -92,15 +92,15 @@ function draw() {
 }
 
 function make2DArray(cols, rows) {
-    let arr = new Array(cols);
-    for (let i = 0; i < arr.length; i++) {
-      arr[i] = new Array(rows);
-      for (let j = 0; j < arr[i].length; j++) {
-        arr[i][j] = 0;
-      }
+  let arr = new Array(cols);
+  for (let i = 0; i < arr.length; i++) {
+    arr[i] = new Array(rows);
+    for (let j = 0; j < arr[i].length; j++) {
+      arr[i][j] = 0;
     }
-    return arr;
   }
+  return arr;
+}
 
   // where to go now:
   // New rules are : - At a white square, turn 90° right, change the color of the square to black, move forward one unit 
